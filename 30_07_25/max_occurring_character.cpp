@@ -1,4 +1,5 @@
-  #include <iostream>
+ 
+       #include <iostream>
 #include <string>
 using namespace std;
 
@@ -29,7 +30,7 @@ char getMaxOccCharacter(const string &s) {
 int main() {
     string s;
     cout << "Enter a string: ";
-    getline(cin, s);
+    cin >> s;
 
     char maxChar = getMaxOccCharacter(s);
     cout << "Maximum occurring character: " << maxChar << endl;
