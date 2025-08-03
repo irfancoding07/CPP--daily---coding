@@ -1,9 +1,10 @@
 
 
-   #include <iostream>  
+    
+       #include <iostream>  
 #include <vector>    
- 
-void bubbleSort(std::vector<int>& arr) {
+ using namespace std ;
+void bubbleSort( vector<int>& arr) {
     int n = arr.size(); 
 
     for (int i = 0; i < n - 1; ++i) {
@@ -12,29 +13,29 @@ void bubbleSort(std::vector<int>& arr) {
    
             if (arr[j] > arr[j + 1]) {
                 
-                std::swap(arr[j], arr[j + 1]);
+              swap(arr[j], arr[j + 1]);
             }
         }
     }
 }
 
   
-void printArray(const std::vector<int>& arr) {
+void printArray(const vector<int>& arr) {
     for (int x : arr) {
-        std::cout << x << " ";
+       cout << x << " ";
     }
-    std::cout << std::endl;
+   cout << endl;
 }
 
 int main() {
-    std::vector<int> myVector = {24, 16, 8, 5, 30, 11, 90};
+     vector<int> myVector = {24, 16, 8, 5, 30, 11, 90};
 
-    std::cout << "Original array: ";
+   cout << "Original array: ";
     printArray(myVector);
 
     bubbleSort(myVector);  
 
-    std::cout << "Sorted array: ";
+   cout << "Sorted array: ";
     printArray(myVector);
 
     return 0;
