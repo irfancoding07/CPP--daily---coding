@@ -16,7 +16,7 @@ void generateSubsequences(string str, int index, string output) {
 
 int main() {
     string str = "abc";
-    cout << "All subsequences are:\n";
+    cout << "All subsequences are" << endl;
     generateSubsequences(str, 0, "");
     return 0;
 }
