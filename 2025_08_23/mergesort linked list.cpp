@@ -104,7 +104,11 @@ int main() {
     node* head = new node(4);
     head->next = new node(2);
     head->next->next = new node(1);
-    head->next->next->next = new node(3);
+    head->next->next->next = new node(6);
+    head->next->next->next->next = new node(3);
+    head->next->next->next->next->next = new node(5);
+
+
 
     cout << "Original list" << endl; 
     print(head);
