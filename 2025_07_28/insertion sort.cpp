@@ -1,4 +1,4 @@
- #include <iostream>
+#include <iostream>
 using namespace std ;
 void insertionSort(int arr[], int n) {
     for (int i = 1; i < n; i++) {
@@ -15,9 +15,9 @@ void insertionSort(int arr[], int n) {
 
 void printArray(int arr[], int size) {
     for (int i = 0; i < size; i++) {
-        std::cout << arr[i] << " ";
+        cout << arr[i] << " ";
     }
-    std::cout << std::endl;
+     
 }
 
  
@@ -25,12 +25,14 @@ int main() {
     int arr[] = {12, 11, 13, 5, 6};
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    std::cout << "Original array: ";
+    cout << " Original array " << " ";
     printArray(arr, n);
+    
+    cout << endl;
 
     insertionSort(arr, n);
 
-    std::cout << "Sorted array: ";
+    cout << " Sorted array" << " ";
     printArray(arr, n);
 
     return 0;
