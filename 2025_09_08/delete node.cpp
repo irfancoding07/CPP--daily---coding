@@ -45,7 +45,11 @@ void print (node* &head) {
 }
 
   void insertAtposition(node* &head, int position, int d){
-     
+
+    if (position == 1) {
+      insertAthead(head,d);
+      return;
+    }
      node* temp = head;
      int cnt = 1;
      
