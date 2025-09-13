@@ -16,15 +16,15 @@ class node {
 
   void  splitlist (node* head,  node*& firsthalf,node*& secondhalf){
       if(head == NULL ){
-       firsthalf = head;
-        secondhalf = NULL;
       return ;
       }
+     firsthalf = head;
+        secondhalf = NULL;
       
       node* slow = head;
       node* fast = head->next;
       
-      while (fast != NULL && fast->next != NULL){
+      while (slow != NULL && fast->next != NULL){
           slow = slow->next;
           fast = fast->next->next;
       }
