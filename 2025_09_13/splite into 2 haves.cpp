@@ -14,10 +14,10 @@ class node {
     
 } ;
 
-  void  splitlist (node* head,  node** firsthalf,  node** secondhalf){
+  void  splitlist (node* head,  node*& firsthalf,node*& secondhalf){
       if(head == NULL || head->next == NULL){
-      *firsthalf = head;
-      *secondhalf = NULL;
+       firsthalf = head;
+        secondhalf = NULL;
       return ;
       }
       
@@ -29,8 +29,8 @@ class node {
           fast = fast->next->next;
       }
       
-      *firsthalf = head;
-      *secondhalf = slow->next;
+      firsthalf = head;
+      secondhalf = slow->next;
       slow->next = NULL;
   }
        void print(node* head) {
@@ -54,7 +54,7 @@ int main() {
     node* firstHalf = NULL;
     node* secondHalf = NULL;
 
-    splitlist(head, &firstHalf, &secondHalf);
+    splitlist(head, firstHalf, secondHalf);
 
     cout << "First Half" << " " ;
     print(firstHalf);
