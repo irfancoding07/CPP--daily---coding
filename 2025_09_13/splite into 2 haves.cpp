@@ -15,7 +15,7 @@ class node {
 } ;
 
   void  splitlist (node* head,  node*& firsthalf,node*& secondhalf){
-      if(head == NULL || head->next == NULL){
+      if(head == NULL ){
        firsthalf = head;
         secondhalf = NULL;
       return ;
@@ -24,7 +24,7 @@ class node {
       node* slow = head;
       node* fast = head->next;
       
-      while (fast && fast->next){
+      while (fast != NULL && fast->next != NULL){
           slow = slow->next;
           fast = fast->next->next;
       }
