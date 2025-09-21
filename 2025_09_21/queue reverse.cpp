@@ -7,17 +7,18 @@ void reverseQueue(queue<int>& q) {
     stack<int> st;
     
     // Transfer all elements from queue to stack
-    while (!q.empty()) {
-        st.push(q.front());
+  while (!q.empty()) {
+        int element = q.front();
         q.pop();
+        st.push(element);
+         
+    }
+    while (!st.empty()) {
+         int element = st.top();
+          st.pop();
+        q.push( element);
     }
     
-    // Transfer all elements back from stack to queue
-    // This reverses the order
-    while (!st.empty()) {
-        q.push(st.top());
-        st.pop();
-    }
 }
 
 int main() {
