@@ -79,7 +79,7 @@ void ReverseLevelOrder(node* root){
         node* temp = q.front();
         q.pop();
 
-        st.push(temp);
+        st.push(temp);   // push the current node (or NULL marker) onto stack
 
         if(temp == NULL){
             cout << endl;
