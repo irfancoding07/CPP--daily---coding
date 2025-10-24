@@ -6,6 +6,7 @@ void sort012(vector<int> &arr) {
     int low = 0, mid = 0;
     int high = arr.size() - 1;
 
+  // Using Dutch National Flag algorithm
     while (mid <= high) {
         if (arr[mid] == 0) {
             swap(arr[low], arr[mid]);
