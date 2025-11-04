@@ -5,12 +5,12 @@ class Solution {
 public:
     bool hasTripletSum(vector<int> &arr, int target) {
         int n = arr.size();
-        sort(arr.begin(), arr.end()); // Step 1: Sort the array
+        sort(arr.begin(), arr.end());  
 
-        for (int i = 0; i < n - 2; i++) { // Step 2: Fix one element
+        for (int i = 0; i < n - 2; i++) { 
             int left = i + 1, right = n - 1;
 
-            while (left < right) { // Step 3: Use two-pointer technique
+            while (left < right) {  
                 int sum = arr[i] + arr[left] + arr[right];
 
                 if (sum == target) {
