@@ -20,28 +20,28 @@ class Solution {
 
         while (count < total) {
             
-            // Print top row (→)
+            // Print startingrow (→)
             for (int i = startingCol; count < total && i <= endingCol; i++) {
                 ans.push_back(mat[startingRow][i]);
                 count++;
             }
             startingRow++;
 
-            // Print right column (↓)
+            // Print endingcol (↓)
             for (int i = startingRow; count < total && i <= endingRow; i++) {
                 ans.push_back(mat[i][endingCol]);
                 count++;
             }
             endingCol--;
 
-            // Print bottom row (←)
+            // Print endingrow (←)
             for (int i = endingCol; count < total && i >= startingCol; i--) {
                 ans.push_back(mat[endingRow][i]);
                 count++;
             }
             endingRow--;
 
-            // Print left column (↑)
+            // Print startingcol (↑)
             for (int i = endingRow; count < total && i >= startingRow; i--) {
                 ans.push_back(mat[i][startingCol]);
                 count++;
