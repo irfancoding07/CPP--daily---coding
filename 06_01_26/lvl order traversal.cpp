@@ -1,0 +1,68 @@
+#include<iostream>
+#include<vector>
+#include <queue>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+
+    Node(int val) {
+        data = val;
+        left = right = NULL;
+    }
+};
+
+class Solution {
+public:
+    vector<vector<int>> levelOrder(Node *root) {
+        vector<vector<int>> ans;
+        if (root == NULL) return ans;
+
+        queue<Node*> q;
+        q.push(root);
+
+        while (!q.empty()) {
+            int size = q.size();
+            vector<int> level;
+
+            for (int i = 0; i < size; i++) {
+                Node* temp = q.front();
+                q.pop();
+
+                level.push_back(temp->data);
+
+                if (temp->left)
+                    q.push(temp->left);
+                if (temp->right)
+                    q.push(temp->right);
+            }
+            ans.push_back(level);
+        }
+        return ans;
+    }
+};
+
+int main() {
+    
+    Node* root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(3);
+    root->left->left = new Node(4);
+    root->left->right = new Node(5);
+    root->right->right = new Node(6);
+
+    Solution obj;
+    vector<vector<int>> result = obj.levelOrder(root);
+
+    
+    for (auto level : result) {
+        for (int val : level) {
+            cout << val << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
